@@ -1,0 +1,613 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+.body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    background-image: url("../images/fondAdminLogin.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 80px;
+}
+
+.navtop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title1 {
+    border: ridge rgb(255, 255, 255);
+    border-width: 0px 0px 2px 2px;
+    border-radius: 0px 0px 0px 15px;
+    background-color: rgba(87, 85, 85, 0.2);
+    max-width: 450px;
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Exo', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 30px 30px 0px 30px;
+}
+
+.glyphicon {
+    width: 20px;
+    height: auto;
+}
+
+.logout_btn {
+    background-color: rgb(241, 93, 93);
+    color: black;
+    border-radius: 10px;
+    margin: 10px 0px 0px 10px;
+    font-family: 'Exo', sans-serif;
+    font-size: 15px;
+}
+
+.barre1 {
+    color: rgba(32, 32, 32, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.barre2 {
+    color: rgba(255, 255, 255, 0.705);
+    display: flex;
+    justify-content: center;
+}
+
+.case {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    width: auto;
+    height: 800px;
+}
+
+.case1 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    border-color: rgb(230, 201, 122);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 0px 20px 0px 40px;
+    background-color: rgba(245, 245, 245, 0.1);
+}
+
+.title_case1 {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    padding: 10px 0px 0px 20px;
+    font-family: 'Exo', sans-serif;
+    font-size: 30px;
+    color: rgb(230, 201, 122);
+    font-weight: bold;
+    border: 0px 0px 60px 0px;
+}
+
+.case2 {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    color: rgb(230, 201, 122);
+    border-radius: 10px;
+    width: 65%;
+    height: 100%;
+    margin: 0px 40px 0px 20px;
+    background-color: rgba(245, 245, 245, 0.1);
+}
+
+.title_case2 {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    padding: 10px 0px 0px 20px;
+    font-family: 'Exo', sans-serif;
+    font-size: 30px;
+    color: rgb(230, 201, 122);
+    font-weight: bold;
+}
+
+.vertical {
+    border-left: 1px solid rgba(54, 53, 53, 0.2);
+    height: 800px;
+    display: inline-block;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prod {
+    margin: 20px 20px 5px 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__field_product {
+    width: 20%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: white;
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.form__field {
+    width: 45%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: white;
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.form__label {
+    transition: 0.2s;
+    font-family: bold;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-family: 'Exo', sans-serif;
+}
+
+.form__field::placeholder {
+    width: 20px;
+    color: transparent;
+}
+
+.form__field:focus {
+    border-image: linear-gradient(to top, transparent, white);
+}
+
+.display_1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.display_2_1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    border: solid 1px;
+    border-color: rgb(230, 201, 122);
+    border-radius: 10px;
+    font-family: 'Exo', sans-serif;
+    margin: 0px 10px 10px 10px;
+}
+
+.display_2_2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    border: solid 1px;
+    border-color: rgb(230, 201, 122);
+    border: solid 1px;
+    border-radius: 10px;
+    font-family: 'Exo', sans-serif;
+    margin: 10px 10px 10px 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.Label {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_Label {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 143px 0px 0px;
+}
+
+.form__field_Label_T {
+    width: 40%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.ResMax {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_ResMax {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 37px 0px 0px;
+}
+
+.form__field_ResMax {
+    width: 30%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.ResMin {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_ResMin {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 41px 0px 0px;
+}
+
+.form__field_ResMin {
+    width: 30%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.PA {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_PA {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 157px 0px 0px;
+}
+
+.form__field_PA {
+    width: 20%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.PB {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_PB {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 157px 0px 0px;
+}
+
+.form__field_PB {
+    width: 20%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.button_touche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-circle.btn-xl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 25px;
+    background-color: rgb(50, 207, 36);
+}
+
+.btn-circle.btn-xl:hover {
+    background-color: green;
+}
+
+.btn-circle.btn-xl::after {
+    background-color: rgb(49, 207, 49);
+}
+
+.select_ref {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_ref {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 91px 0px 0px;
+}
+
+.form__field_Label_L {
+    width: 40%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.Anode {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_Anode {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 135px 0px 0px;
+}
+
+.form__field_Anode {
+    width: 20%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.Cathode {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_Cathode {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 120px 0px 0px;
+}
+
+.form__field_Cathode {
+    width: 20%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.button_led {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.display2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__field_ref {
+    width: 35%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: white;
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.display2_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 97%;
+    height: 77%;
+    border: solid 1px;
+    border-color: rgb(230, 201, 122);
+    border-radius: 10px;
+    font-family: 'Exo', sans-serif;
+    margin: 0px 10px 10px 10px;
+}
+
+.TensionMax {
+    margin: 80px 20px 20px 20px;
+}
+
+.form__label_Tmax {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 100px 0px 0px;
+}
+
+.form__field_Tmax {
+    width: 25%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+::placeholder {
+    color: rgb(218, 214, 214);
+    font-size: 0.8em;
+}
+
+::placeholder::selection {
+    background: transparent;
+    font-size: 0.8em;
+}
+
+.TensionMin {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_Tmin {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 105px 0px 0px;
+}
+
+.form__field_Tmin {
+    width: 25%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.CourantMax {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_Cmax {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 98px 0px 0px;
+}
+
+.form__field_Cmax {
+    width: 25%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.CourantMin {
+    margin: 20px 20px 20px 20px;
+}
+
+.form__label_Cmin {
+    transition: 0.2s;
+    font-size: 18px;
+    color: rgb(61, 60, 60);
+    font-family: 'Exo', sans-serif;
+    font-weight: 500;
+    padding: 0px 100px 0px 0px;
+}
+
+.form__field_Cmin {
+    width: 25%;
+    border-image: linear-gradient(to bottom, transparent, rgb(209, 209, 209));
+    border-image-slice: 10;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding-bottom: 1px;
+    border-width: 1px;
+    text-align: center;
+    margin: 0px 0px 0px 30px;
+}
+
+.button_ref {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 110px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
+}
