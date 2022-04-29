@@ -70,7 +70,7 @@ def logout():
 
 @app.route('/admin/configuration', methods=['GET'])
 def showAdminConfiguration():
-    if isLoggedIn():
+    if not isLoggedIn():
         return redirect(url_for('showLoginPage'))
 
     products = db.getProducts()
@@ -80,7 +80,7 @@ def showAdminConfiguration():
 
 @app.route('/admin/configuration', methods=['POST'])
 def updateConfiguration():
-    if isLoggedIn():
+    if not isLoggedIn():
         return redirect(url_for('showLoginPage'))
 
     return redirect(url_for('showAdminConfiguration'))
