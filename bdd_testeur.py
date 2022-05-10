@@ -16,34 +16,40 @@ class BddTesteur:
         self.connect(ip, nombdd)
 
     # fonction qui ajoute une nouvelle référence à une base de donnée si elle n'existe pas déjà
-    def nouvelle_reference(self, ref):
+    def new_product_LED(self, product, label, anode, cathode):
         # vérifie si la liste retournée est vide ou non, si comporte des caractère, le produit existe déjà donc on ajoute pas à la BDD
-        if self.get_reference(ref):
+        if self.get_product(product):
             print("le produit existe déjà")
         else:
             try:
-                commande_sql = "INSERT INTO `produits` (`Référence`) VALUES ('" + \
-                    ref + "');"
+                #####POUR AJOUTER PRODUIT LEDS#####
+                commande_sql = "INSERT INTO `produits` (`produits_id`, `produits_name`, `produits_label`, `produits_anode`, `produits_cathode`) VALUES ('', '" + \
+                    product + "', '" + label + "', '" + anode + "', '" + cathode + "')"
                 cursor.execute(commande_sql)
-                # on ajoute la nouvelle ref à la BDD
-                print("Le produit est ajouté à la BDD")
+                # on ajoute le nouveau produit à la BDD
+                print("Le produitLEDS est ajouté à la BDD")
             except Error as e:
                 print("Error while connecting and inserting data to MySQL", e)
-            finally:
-                if connection.is_connected():
-                    try:
-                        commande_sql = "CREATE TABLE `"+ref + \
-                            "` (Référence VARCHAR(32), Anode TINYINT, Cathode TINYINT, Disposition TINYINT, Type TINYINT, NuméroLed INT, NuméroTest TINYINT)"
-                        # On créer une nouvelle table pour le nouveau produit
-                        cursor.execute(commande_sql)
-                    except:
-                        print("ERROR creating a new table for the new product")
 
-    # cette fonction recherche dans la table produit si le produit est déjà inscrit dans la BDD
+    def new_product_TOUCHES(self, product, label, res_max, res_min, p_A, p_B):
+        # vérifie si la liste retournée est vide ou non, si comporte des caractère, le produit existe déjà donc on ajoute pas à la BDD
+        if self.get_product(product):
+            print("le produit existe déjà")
+        else:
+            try:
+                #####POUR AJOUTER PRODUIT TOUCHES#####
+                commande_sql = "INSERT INTO `produits` (`produits_id`, `produits_name`, `produits_label`, `produits_resMax`, `produits_resMin`, `PA`, `PB`) VALUES ('', '" + \
+                    product + "', '" + label + "', '" + res_max + "', '" + \
+                    res_min + "', '" + p_A + "', '" + p_B + "')"
+                cursor.execute(commande_sql)
+                # on ajoute le nouveau produit à la BDD
+                print("Le produitTOUCHES est ajouté à la BDD")
+            except Error as e:
+                print("Error while connecting and inserting data to MySQL", e)
 
-    def get_reference(self, reaserch):
+    def get_product(self, reaserch):
         try:
-            commande_sql = "SELECT DISTINCT(Référence) FROM `produits` WHERE (Référence = \""+reaserch+"\")"
+            commande_sql = "SELECT DISTINCT(produits_name) FROM `produits` WHERE (produits_name = \""+reaserch+"\")"
             cursor.execute(commande_sql)  # execute la commande SQL
             records = cursor.fetchall()  # Récupère la réponse de la BDD
             print(records)
@@ -60,7 +66,7 @@ class BddTesteur:
             val = (ref, anode, cathode, disposition, Type, numled, numtest)
             print(sql, val)
             cursor.execute(sql, val)
-            connection.commit()  # Commit n'est pas fait automatiquement sur python, c'est nécessaire pour les les transactions qui modifient la BDD
+            connection.commit()  # Commit n'est pas fait automatiquement sur python, c'est nécessaire pour les transactions qui modifient la BDD
             # on ajoute la nouvelle ref à la BDD
             print("La ligne est ajouté à la table ", table)
         except Error as e:

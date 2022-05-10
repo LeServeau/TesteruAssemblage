@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from unicodedata import name
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL, MySQLdb
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -78,6 +79,19 @@ def showAdminConfiguration():
     return render_template('admin/configuration.html', username=session['username'])
 
 
+@app.route('/admin/products/add', methods=['POST'])
+def newProduct():
+    data = request.get_json()
+
+    nameReference = data["nameReference"]
+    maximumVoltage = data["maximumVoltage"]
+    minimumVoltage = data["minimumVoltage"]
+    maximumCurrent = data["maximumCurrent"]
+    minimumCurrent = data["minimumCurrent"]
+
+    return jsonify({"nameReference": nameReference, "maximumVoltage": maximumVoltage, "minimumVoltage": minimumVoltage, "maximumCurrent": maximumCurrent, "minimumCurrent": minimumCurrent})
+
+
 @app.route('/admin/configuration', methods=['POST'])
 def updateConfiguration():
     if not isLoggedIn():
@@ -91,4 +105,4 @@ def isLoggedIn():
 
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.84', port=5000)
+    app.run()
