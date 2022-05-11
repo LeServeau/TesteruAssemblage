@@ -67,7 +67,7 @@ class DB:
             except Error as e:
                 print("Error while connecting and inserting data to MySQL", e)
 
-    def new_reference(self, ..., ..., ..., ..., ...):
+    def new_reference(self, .., ..., ..., ..., ...):
         ###Mettre la requete SQL pour ajouter ref a la BDD###
         # Puis l'appeler dans app.py avec db.new_reference" dans la route /admin/products/add
 
