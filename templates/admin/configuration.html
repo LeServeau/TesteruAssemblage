@@ -38,7 +38,7 @@
                 </div>
                 <div class="display_1">
                     <div class="display_2_1">
-                        <form class="touches" action="{{ url_for('newProduct') }}" method="POST">
+                        <form class="touches" action="{{ url_for('newReference') }}" method="POST">
                             <div class="title">
                                 <h3>Pour test Touches</h3>
                             </div>
@@ -146,19 +146,19 @@
                     </div>
                     <div class="CourantMin">
                         <label for="Cathode" class="form__label_Cmin">Courant min</label>
-                        <input type="input" class="form__field_Cmin" name="minimumCurrent" id='Cathode' placeholder="mA" required />
+                        <input type="input" class="form__field_Cmin" name="minimumCurrent" id='Cmin' placeholder="mA" required />
                     </div>
                     <div class="button_ref">
                         <button type="submit">Ajouter +</button>
                     </div>
-
                 </div>
-            </div>
+            </form>
         </div>
-        <script>
-            const referenceFormUrl = "{{ url_for('newProduct', _external=True) }}";
-        </script>
-        <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+    </div>
+    <script>
+        const referenceFormUrl = "{{ url_for('newReference', _external=True) }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
 </body>
 
 </html>

@@ -47,7 +47,8 @@ class DB:
 
     def new_product_TOUCHES(self, product, label_touche, resMax, resMin, P_b, P_a):
         cursor = self.db.cursor()
-        # vérifie si la liste retournée est vide ou non, si comporte des caractère, le produit existe déjà donc on ajoute pas à la BDD
+        # vérifie si la liste retournée est vide ou non, si comporte des caractè
+        # re, le produit existe déjà donc on ajoute pas à la BDD
         if self.get_product(product):
             print("le produit existe déjà")
         else:
@@ -56,7 +57,7 @@ class DB:
             ResMax = request.form["ResMax"]
             ResMin = request.form["ResMin"]
             Pa = request.form["Pa"]
-            Pb = request.form["Pa"]
+            Pb = request.form["Pb"]
             try:
                 #####POUR AJOUTER PRODUIT TOUCHES#####
                 commande_sql = "INSERT INTO `produits` VALUES (%s, %s, %s, %s, %s, %s)"
@@ -67,8 +68,15 @@ class DB:
             except Error as e:
                 print("Error while connecting and inserting data to MySQL", e)
 
-    def new_reference(self, .., ..., ..., ..., ...):
+    def new_reference(self, NameRef, MaxV, MinV, MaxC, MinC):
         ###Mettre la requete SQL pour ajouter ref a la BDD###
+        cursor = self.db.cursor()
+        commande_sql = """INSERT INTO références (NomReference, MaxVoltage, MinVoltage, MaxCourant, MinCourant) VALUES (%s, %s, %s, %s, %s) """
+        data = (NameRef, MaxV, MinV, MaxC, MinC)
+        cursor.execute(commande_sql, data)
+        self.db.commit()
+        print("La Référence " + NameRef + " est ajouté à la BDD...")
+
         # Puis l'appeler dans app.py avec db.new_reference" dans la route /admin/products/add
 
     def get_product(self, reaserch):

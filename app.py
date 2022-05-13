@@ -63,6 +63,7 @@ def loginIntoAdmin():
 
 @app.route('/admin/logout')
 def logout():
+
     session.pop('loggedin', None)
     session.pop('username', None)
 
@@ -79,8 +80,8 @@ def showAdminConfiguration():
     return render_template('admin/configuration.html', username=session['username'])
 
 
-@app.route('/admin/products/add', methods=['POST'])
-def newProduct():
+@app.route('/admin/reference/add', methods=['POST'])
+def newReference():
     data = request.get_json()
 
     nameReference = data["nameReference"]
@@ -89,7 +90,11 @@ def newProduct():
     maximumCurrent = data["maximumCurrent"]
     minimumCurrent = data["minimumCurrent"]
 
-    return jsonify({"nameReference": nameReference, "maximumVoltage": maximumVoltage, "minimumVoltage": minimumVoltage, "maximumCurrent": maximumCurrent, "minimumCurrent": minimumCurrent})
+    db.new_reference(nameReference, maximumVoltage,
+                     minimumVoltage, maximumCurrent, minimumCurrent)
+
+    print(data)
+    return jsonify({"Name Référence": nameReference, "maximumVoltage": maximumVoltage, "minimumVoltage": minimumVoltage, "maximumCurrent": maximumCurrent, "minimumCurrent": minimumCurrent})
 
 
 @app.route('/admin/configuration', methods=['POST'])
