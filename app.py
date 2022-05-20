@@ -80,6 +80,25 @@ def showAdminConfiguration():
     return render_template('admin/configuration.html', username=session['username'])
 
 
+def config():
+    ref = db.getRef()
+    print(ref)
+
+    return render_template('configuration.html', reference=ref)
+
+
+@app.route('/admin/configuration', methods=['POST'])
+def updateConfiguration():
+    if not isLoggedIn():
+        return redirect(url_for('showLoginPage'))
+
+    return redirect(url_for('showAdminConfiguration'))
+
+
+def isLoggedIn():
+    return 'loggedin' in session
+
+
 @app.route('/admin/reference/add', methods=['POST'])
 def newReference():
     data = request.get_json()
@@ -95,18 +114,6 @@ def newReference():
 
     print(data)
     return jsonify({"Name Référence": nameReference, "maximumVoltage": maximumVoltage, "minimumVoltage": minimumVoltage, "maximumCurrent": maximumCurrent, "minimumCurrent": minimumCurrent})
-
-
-@app.route('/admin/configuration', methods=['POST'])
-def updateConfiguration():
-    if not isLoggedIn():
-        return redirect(url_for('showLoginPage'))
-
-    return redirect(url_for('showAdminConfiguration'))
-
-
-def isLoggedIn():
-    return 'loggedin' in session
 
 
 if __name__ == '__main__':

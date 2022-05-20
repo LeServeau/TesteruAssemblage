@@ -19,6 +19,13 @@ class DB:
         )
         return cursor.fetchall()
 
+    def getRef(self):
+        cursor = self.db.cursor()
+        cursor.execute(
+            'SELECT id, NomReference FROM `références` ORDER BY `id`'
+        )
+        return cursor.fetchall()
+
     # Cette méthode permet de récuperer l'utilisateur et le renvois
     def userExistAndPasswordIsValid(self, username, password):
         cursor = self.db.cursor()
