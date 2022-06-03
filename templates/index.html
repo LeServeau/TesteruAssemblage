@@ -76,7 +76,7 @@
                             <div class="produits" class="form-group floating-label">
                                 <label for="Produits" class="form__label">Produits</label>
                                 <form action="{{ url_for('index') }}" method="post">
-                                    <select class="form__field" id="Produits" name="Produits" data-live-search="true" class="form-control">
+                                    <select class="form__field" id="Produits" name="Produits" data-live-search="true">
                                     <option value="" disabled selected hidden>Sélectionner un produit</option>
                                 {% for row in produits %}
                                 <option class="form__label" value="{{row[0]}}">{{row[1]}}</option>

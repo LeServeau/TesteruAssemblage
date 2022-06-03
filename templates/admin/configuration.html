@@ -14,20 +14,19 @@
 </head>
 
 <body>
-    <div class="grad"></div>
-    <div class="body">
-        <nav class="navtop">
-            <a href="{{ url_for('logout') }}">
-                <button class="logout_btn"><i class="glyphicon glyphicon-log-out" style="font-size:15px"></i> Déconnexion</button>
-            </a>
-            <img class="logo" src="../static/images/Logo-SERIBASE--sans fond.png" />
-            <div class="title1">
-                <h1 class="title">Configuration Admin</h1>
-            </div>
-        </nav>
-        <p class="barre1">________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
-        <div class="case">
-            <div class="case1">
+    <nav class="navtop">
+        <a href="{{ url_for('logout') }}">
+            <button class="logout_btn"><i class="glyphicon glyphicon-log-out" style="font-size:15px"></i> Déconnexion</button>
+        </a>
+        <img class="logo" src="../static/images/Logo-SERIBASE--sans fond.png" />
+        <div class="title1">
+            <h1 class="title">Configuration Admin</h1>
+        </div>
+    </nav>
+    <p class="barre1">________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
+    <div class="case">
+        <div class="case1">
+            <form class="case2" action="#" id="referenceForm">
                 <div class="title_case1">
                     <p>Configuration d'un produit</p>
                 </div>
@@ -39,123 +38,140 @@
                 </div>
                 <div class="display_1">
                     <div class="display_2_1">
-                        <form class="touches" action="{{ url_for('newReference') }}" method="POST">
-                            <div class="title">
-                                <h3>Pour test Touches</h3>
-                            </div>
+                        <div class="title">
+                            <h3>Pour test Touches</h3>
+                        </div>
+                        <p class="barre2">__________________________________________</p>
+                        <form action="{{ url_for('newReference') }}" method="POST">
+                            <div class="LABEL">
+                                <div class="LABEL1">
+                                    <div class="Label">
+                                        <label for="Label" class="form__label_Label">Label</label>
+                                    </div>
+                                    <div class="ResMax">
+                                        <label for="ResMax" class="form__label_ResMax">Résistance maximale</label>
+                                    </div>
+                                    <div class="ResMin">
+                                        <label for="ResMin" class="form__label_ResMin">Résistance minimale</label>
+                                    </div>
+                                    <div class="PA">
+                                        <label for="PA" class="form__label_PA">Point N°A</label>
+                                    </div>
 
-                            <p class="barre2">__________________________________________</p>
-                            <div class="Label">
-                                <label for="Label" class="form__label_Label">Label</label>
-                                <input type="input" class="form__field_Label_T" name="label_touche" id='label_touches' placeholder="..." required />
-                            </div>
-                            <div class="ResMax">
-                                <label for="ResMax" class="form__label_ResMax">Résistance maximale</label>
-                                <input type="input" class="form__field_ResMax" name="ResMax" id='ResMax' placeholder="Ω" required />
-                            </div>
-                            <div class="ResMin">
-                                <label for="ResMin" class="form__label_ResMin">Résistance minimale</label>
-                                <input type="input" class="form__field_ResMin" name="ResMin" id='ResMin' placeholder="Ω" required />
-                            </div>
-                            <div class="PA">
-                                <label for="PA" class="form__label_PA">Point N°A</label>
-                                <input type="input" class="form__field_PA" name="Pa" id='PA' placeholder="N°..." required />
-                            </div>
+                                    <div class="PB">
+                                        <label for="PB" class="form__label_PB">Point N°B</label>
+                                    </div>
+                                </div>
+                                <div class="LABEL2">
+                                    <div class="Label">
+                                        <input type="input" class="form__field_Label_T" name="label_touche" id='label_touches' placeholder="..." required />
+                                    </div>
+                                    <div class="ResMax">
+                                        <input type="input" class="form__field_ResMax" name="ResMax" id='ResMax' placeholder="Ω" required />
+                                    </div>
+                                    <div class="ResMin">
+                                        <input type="input" class="form__field_ResMin" name="ResMin" id='ResMin' placeholder="Ω" required />
+                                    </div>
+                                    <div class="PA2">
+                                        <input type="input" class="form__field_PA" name="Pa" id='PA' placeholder="N°..." required />
+                                    </div>
 
-                            <div class="PB">
-                                <label for="PB" class="form__label_PB">Point N°B</label>
-                                <input type="input" class="form__field_PB" name="Pb" id='PB' placeholder="N°..." required />
+                                    <div class="PB2">
+                                        <input type="input" class="form__field_PB" name="Pb" id='PB' placeholder="N°..." required />
+                                    </div>
+                                </div>
                             </div>
                             <div class="button_touche">
-                                <div class="svg-wrapper">
-                                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
-                                    <div id="text">
-                                        <a href=""><span class="spot"></span>Ajouter +</a>
-                                    </div>
-                                </svg>
-                                </div>
-
+                                <button type="submit">Ajouter +</button>
                             </div>
                         </form>
                     </div>
                     <div class="display_2_2">
+
                         <div class="title">
                             <h3>Pour test Leds</h3>
                         </div>
                         <p class="barre2">__________________________________________</p>
-                        <div class="select_ref">
-                            <label for="Reference" class="form__label">Références</label>
-                            <form action="{{ url_for('updateConfiguration') }}" method="POST">
-                                <select class="form__field" id="Reference" name="Reference" data-live-search="true" class="form-control">
-                                    <option value="" disabled selected hidden>Sélectionner une référence</option>
-                                {% for row in reference %}
-                                <option class="form__label" value="{{row[0]}}">{{row[1]}}</option>
-                                {% endfor %} 
-                            </select>
-                            </form>
-                        </div>
-                        <div class="Label">
-                            <label for="Label" class="form__label_Label">Label</label>
-                            <input type="input" class="form__field_Label_L" name="Label_led" id='Label_led' placeholder="..." required />
-                        </div>
-                        <div class="Anode">
-                            <label for="Anode" class="form__label_Anode">Point Anode</label>
-                            <input type="input" class="form__field_Anode" name="Anode" id='Anode' placeholder="N°..." required />
-                        </div>
-                        <div class="Cathode">
-                            <label for="Cathode" class="form__label_Cathode">Point Cathode</label>
-                            <input type="input" class="form__field_Cathode" name="Cathode" id='Cathode' placeholder="N°..." required />
-                        </div>
-                        <div class="button_led">
-                            <div class="svg-wrapper">
-                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                                    <rect id="shape" height="40" width="150" />
-                                    <div id="text">
-                                        <a href=""><span class="spot"></span>Ajouter +</a>
+                        <form action="{{ url_for('newReference') }}" method="POST">
+                            <div class="LABEL">
+                                <div class="LABEL1">
+                                    <div class="select_ref">
+                                        <label for="Reference" class="form__label_Ref">Références</label>
                                     </div>
-                                </svg>
+                                    <div class="Label">
+                                        <label for="Label" class="form__label_Label">Label</label>
+                                    </div>
+                                    <div class="Anode">
+                                        <label for="Anode" class="form__label_Anode">Point Anode</label>
+                                    </div>
+                                    <div class="Cathode">
+                                        <label for="Cathode" class="form__label_Cathode">Point Cathode</label>
+                                    </div>
+                                </div>
+                                <div class="LABEL2">
+                                    <form action="{{ url_for('config') }}" method="GET">
+                                        <div class="select_ref">
+                                            <select class="form__field" id="Reference" name="Reference" data-live-search="true">
+                                            <option value="" disabled selected hidden>Sélectionner référence</option>
+                                        {% for ref in reference %}
+                                        <option class="form__label" value="{{ref[0]}}">{{ref[1]}}</option>
+                                        {% endfor %} 
+                                    </select>
+                                        </div>
+                                    </form>
+                                    <div class="Label">
+                                        <input type="input" class="form__field_Label_L" name="Label_led" id='Label_led' placeholder="..." required />
+                                    </div>
+                                    <div class="Anode2">
+                                        <input type="input" class="form__field_Anode" name="Anode" id='Anode' placeholder="N°..." required />
+                                    </div>
+                                    <div class="Cathode2">
+                                        <input type="input" class="form__field_Cathode" name="Cathode" id='Cathode' placeholder="N°..." required />
+                                    </div>
+                                </div>
                             </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <span class="vertical"></span>
-            <form class="case2" action="#" id="referenceForm">
-                <div class="title_case2">
-                    <p>Configuration d'une référence</p>
-                </div>
-                <div class="display2">
-                    <div class="prod">
-                        <label for="NameRef" class="form__label">Choisir nom de le référence</label>
-
-                    </div>
-                    <input type="input" class="form__field_ref" name="nameReference" id='NameRef' required />
-                </div>
-                <div class="display2_2">
-                    <div class="TensionMax">
-                        <label for="Tmax" class="form__label_Tmax">Tension max</label>
-                        <input type="input" class="form__field_Tmax" name="maximumVoltage" id='Tmax' placeholder="V" required />
-                    </div>
-                    <div class="TensionMin">
-                        <label for="Tmin" class="form__label_Tmin">Tension min</label>
-                        <input type="input" class="form__field_Tmin" name="minimumVoltage" id='Tmin' placeholder="V" required />
-                    </div>
-                    <div class="CourantMax">
-                        <label for="Cmax" class="form__label_Cmax">Courant max</label>
-                        <input type="input" class="form__field_Cmax" name="maximumCurrent" id='Cmax' placeholder="mA" required />
-                    </div>
-                    <div class="CourantMin">
-                        <label for="Cathode" class="form__label_Cmin">Courant min</label>
-                        <input type="input" class="form__field_Cmin" name="minimumCurrent" id='Cmin' placeholder="mA" required />
-                    </div>
-                    <div class="button_ref">
-                        <button type="submit">Ajouter +</button>
+                            <div class="button_led">
+                                <button type="submit">Ajouter +</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </form>
         </div>
+        <span class="vertical"></span>
+        <form class="case2" action="#" id="referenceForm">
+            <div class="title_case2">
+                <p>Configuration d'une référence</p>
+            </div>
+            <div class="display2">
+                <div class="prod">
+                    <label for="NameRef" class="form__label">Choisir nom de le référence</label>
+
+                </div>
+                <input type="input" class="form__field_ref" name="nameReference" id='NameRef' required />
+            </div>
+            <div class="display2_2">
+                <div class="TensionMax">
+                    <label for="Tmax" class="form__label_Tmax">Tension max</label>
+                    <input type="input" class="form__field_Tmax" name="maximumVoltage" id='Tmax' placeholder="V" required />
+                </div>
+                <div class="TensionMin">
+                    <label for="Tmin" class="form__label_Tmin">Tension min</label>
+                    <input type="input" class="form__field_Tmin" name="minimumVoltage" id='Tmin' placeholder="V" required />
+                </div>
+                <div class="CourantMax">
+                    <label for="Cmax" class="form__label_Cmax">Courant max</label>
+                    <input type="input" class="form__field_Cmax" name="maximumCurrent" id='Cmax' placeholder="mA" required />
+                </div>
+                <div class="CourantMin">
+                    <label for="Cathode" class="form__label_Cmin">Courant min</label>
+                    <input type="input" class="form__field_Cmin" name="minimumCurrent" id='Cmin' placeholder="mA" required />
+                </div>
+                <div class="button_ref">
+                    <button type="submit">Ajouter +</button>
+                </div>
+            </div>
+        </form>
     </div>
     <script>
         const referenceFormUrl = "{{ url_for('newReference', _external=True) }}";

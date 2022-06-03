@@ -29,6 +29,8 @@ def index():
 
     return render_template('index.html', produits=products)
 
+####################Login/Logout##################
+
 
 @app.route('/admin/login', methods=['GET'])
 def showLoginPage():
@@ -69,6 +71,16 @@ def logout():
 
     return redirect(url_for('showLoginPage'))
 
+####################Configuration##################
+
+
+@app.route('/admin/configuration', methods=['GET'])
+def config():
+    ref = db.getRef()
+    print(ref)
+
+    return render_template('admin/configuration.html', reference=ref)
+
 
 @app.route('/admin/configuration', methods=['GET'])
 def showAdminConfiguration():
@@ -78,13 +90,6 @@ def showAdminConfiguration():
     products = db.getProducts()
 
     return render_template('admin/configuration.html', username=session['username'])
-
-
-def config():
-    ref = db.getRef()
-    print(ref)
-
-    return render_template('configuration.html', reference=ref)
 
 
 @app.route('/admin/configuration', methods=['POST'])
@@ -97,6 +102,8 @@ def updateConfiguration():
 
 def isLoggedIn():
     return 'loggedin' in session
+
+###############Ajout d'une ref######################
 
 
 @app.route('/admin/reference/add', methods=['POST'])
