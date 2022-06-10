@@ -123,5 +123,23 @@ def newReference():
     return jsonify({"Name Référence": nameReference, "maximumVoltage": maximumVoltage, "minimumVoltage": minimumVoltage, "maximumCurrent": maximumCurrent, "minimumCurrent": minimumCurrent})
 
 
+@app.route('/admin/produitTouche/add', methods=['POST'])
+def newProduitTouche():
+    data = request.get_json()
+
+    nameProductTouche = data["nameProductTouche"]
+    labelTouche = data["labelTouche"]
+    maximunRes = data["maximunRes"]
+    minimunRes = data["minimunRes"]
+    pa = data["pa"]
+    pb = data["pb"]
+
+    db.new_productTouche(nameProductTouche, labelTouche,
+                         maximunRes, minimunRes, pa, pb)
+
+    print(data)
+    return jsonify({"Name Touche": nameProductTouche, "maximumVoltage": labelTouche, "minimumVoltage": maximunRes, "maximumCurrent": minimunRes, "pa": pa, "pb": pb})
+
+
 if __name__ == '__main__':
     app.run()

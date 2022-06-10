@@ -1,13 +1,14 @@
-const referenceForm = document.querySelector("#referenceForm");
+const toucheForm = document.querySelector("#toucheForm");
 
-referenceForm.addEventListener("submit", (e) => {
+
+toucheForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
 
     const data = fromFormDataToObject(formData);
 
-    fetch(referenceFormUrl, {
+    fetch(toucheFormUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

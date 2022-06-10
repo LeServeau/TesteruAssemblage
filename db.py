@@ -86,6 +86,15 @@ class DB:
 
         # Puis l'appeler dans app.py avec db.new_reference" dans la route /admin/products/add
 
+    def new_productTouche(self, NameProduct, label, MaxRes, MinRes, Pa, Pb):
+        ###Mettre la requete SQL pour ajouter ref a la BDD###
+        cursor = self.db.cursor()
+        commande_sql = """INSERT INTO produits (produits_name, produits_label, produits_resMax, produits_resMin, PA, PB) VALUES (%s, %s, %s, %s, %s, %s) """
+        data = (NameProduct, label, MaxRes, MinRes, Pa, Pb)
+        cursor.execute(commande_sql, data)
+        self.db.commit()
+        print("La Référence " + NameProduct + " est ajouté à la BDD...")
+
     def get_product(self, reaserch):
         cursor = self.db.cursor()
         try:
